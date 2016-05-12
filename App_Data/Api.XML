@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Startup">
+            <summary>
+            Входня точка Owin
+            </summary>
+        </member>
+        <member name="P:Api.Startup.OAuthBearerAuthenticationOptions">
+            <summary>
+            Настройки bearer middleware
+            </summary>
+        </member>
+        <member name="M:Api.Startup.ConfigureAuth(Owin.IAppBuilder)">
+            <summary>
+            Настройки
+            </summary>
+        </member>
+        <member name="T:Api.UnityConfig">
+            <summary>
+            Specifies the Unity configuration for the main container.
+            </summary>
+        </member>
+        <member name="M:Api.UnityConfig.GetConfiguredContainer">
+            <summary>
+            Gets the configured Unity container.
+            </summary>
+        </member>
+        <member name="M:Api.UnityConfig.RegisterTypes(Microsoft.Practices.Unity.IUnityContainer)">
+            <summary>Registers the type mappings with the Unity container.</summary>
+            <param name="container">The unity container to configure.</param>
+            <remarks>There is no need to register concrete types such as controllers or API controllers (unless you want to 
+            change the defaults), as Unity allows resolving a concrete type even if it was not previously registered.</remarks>
+        </member>
+        <member name="T:Api.UnityWebApiActivator">
+            <summary>Provides the bootstrapping for integrating Unity with WebApi when it is hosted in ASP.NET</summary>
+        </member>
+        <member name="M:Api.UnityWebApiActivator.Start">
+            <summary>Integrates Unity when the application starts.</summary>
+        </member>
+        <member name="M:Api.UnityWebApiActivator.Shutdown">
+            <summary>Disposes the Unity container when the application is shut down.</summary>
+        </member>
+        <member name="T:Api.Filters.ApiExceptionFilter">
+            <summary>
+            Фильтр ошибок Web API
+            </summary>
+        </member>
+        <member name="M:Api.Filters.ApiExceptionFilter.OnException(System.Web.Http.Filters.HttpActionExecutedContext)">
+            <summary>
+            Raises the exception event.
+            </summary>
+            <param name="actionExecutedContext">The context for the action.</param>
+        </member>
+        <member name="T:Api.Handlers.ApiLogHandler">
+            <summary>
+            API request logger
+            </summary>
+        </member>
+    </members>
+</doc>
